@@ -1,4 +1,4 @@
-# examples
+# Coding Examples
 
 Scripts included in this repository showcase the wide range of skills and techniques personally used in R
 
