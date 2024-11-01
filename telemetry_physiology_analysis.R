@@ -35,11 +35,6 @@ inletdist <- read.csv('inlet distances 23FEB22.csv', header = T)
 
 
 
-
-
-
-
-
   #demographics
 Snook_tag <- subset(tag, Species == "Cun")
 Sheep_tag <- subset(tag, Species == "Apr")
@@ -50,8 +45,6 @@ hist(as.numeric(Sheep_tag$TL_mm))
 #create stacked bar plot with TL on x and color is hab type
 
  
-
-
 
 #looking for individuals that fall within M & F 50% maturity size class per Matheson 1998
   #M - 330-348
@@ -129,7 +122,6 @@ lines(lowess(Snook_tag$Sal, Snook_blood$PCV_av), col = 'red')
 
 
 
-
 boxplot(blood$PVC_av ~ tag$Species)
 
 ## Sheep PCV
@@ -147,7 +139,6 @@ lines(lowess(Sheep_tag$Temp, Sheep_blood$PCV_av), col = 'red')
 #by salinity
 plot(na.rm(Sheep_blood$PVC_av) ~ na.rm(Sheep_tag$Sal))
 lines(lowess(Sheep_tag$Sal, Sheep_blood$PCV_av), col = 'red', na.rm = T)
-
 
 
 boxplot(blood$PVC_av ~ blood$Date)
@@ -302,9 +293,6 @@ dev.off()
 
 
 
-
-
-
 library('dplyr')
 
   #getting average temps to add to plot
@@ -415,9 +403,6 @@ dev.off()
 
 
 
-
-
-
 #### Making temp, DO, and salinity plots separating Dry post release ## just adjusted code above to this
 AV_environ$Date <- as.Date(AV_environ$Date, "%m/%d/%Y")
 
@@ -426,14 +411,6 @@ dates <- as.Date(c("2024-02-20", "2024-02-27", "2024-03-12"))
 AV_environ$Release <- ifelse(AV_environ$season == "Wet22", "Wet",
                         ifelse(AV_environ$season == "Wet23", "Wet", 
                                ifelse(AV_environ$season == "Dry24" & AV_environ$Date %in% dates, "Dry24R", "Dry")))
-
-
-
-
-
-
-
-
 
 
 
@@ -592,9 +569,6 @@ dev.off()
 
 
 
-
-
-
 #### ANIMATION OF DIFFERENT INDIVIDUALS THROUGH TIME ####
 library(sf)
 library(raster)
@@ -636,8 +610,6 @@ tmap_animation(HurricaneSNanimation,
 
 
 
-
-
 #ggplot
 p = ggplot()+
   geom_sf(data = test, aes(fill = ATTRIBUTE)) +
@@ -673,8 +645,6 @@ anim <- p +
   ggtitle("Date: {frame_along}")
 
 animate(anim, nframes = 100, fps =10)
-
-
 
 
 
