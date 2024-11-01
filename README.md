@@ -19,4 +19,4 @@ Scripts included in this repository showcase the wide range of skills and techni
 - This script provides examples of produced data visualizations showcasing acoustic telemetry and evnironmental data.
 
 #BEF_stats 
-- This script outlines biodiversity ecosystem function analysis including partial residual models and corresponding plots. 
+- This script outlines biodiversity ecosystem function analysis including partial residual models and corresponding plots and producting raster maps. 
